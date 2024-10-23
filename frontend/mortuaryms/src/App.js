@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <Routes>
-          <Route path='/register' element={<RegisterAdmin />} />
+          <Route path='/registeradmin' element={<RegisterAdmin />} />
         </Routes>
       </BrowserRouter>
     );
