@@ -11,8 +11,8 @@ export default class Homepage extends Component {
                     <p>account information</p>
                 </div>
                 <a className="link" href="#">Dashboard</a>
-                <a className="link" href="#">Deceased <span>+</span></a>
-                <a className="link" href="#"> Staff <span>+</span></a>
+                <a className="link" href="#">Deceased <span className="link-span">+</span></a>
+                <a className="link" href="#"> Staff <span className="link-span">+</span></a>
                 <a className="link" href="#">Manage Inventory</a>
                 <a className="link" href="#">Manage Deceased</a>
                 <a className="link" href="#">Manage Staff</a>
@@ -34,7 +34,7 @@ const HomepageContainer = styled.div`
 display:grid;
 grid-template-columns: 1fr 3fr;
 .menu{
-box-shadow: 0 8rem 7rem #FFF1DB;
+box-shadow: .1rem .4rem .3rem #333;
 z-index:2;
 .account-infor{
 display:flex;
@@ -44,7 +44,7 @@ background-color:#FFF0D1;
   background-color: #C1D8C3;
   display:flex;
   flex-direction:column;
-  gap: 1.3rem;
+  gap: .5rem;
 
   .link{
   text-decoration:none;
@@ -52,11 +52,13 @@ background-color:#FFF0D1;
   background-color:#333;
   padding:1rem;
   margin-left:.2rem;
-  width:87%;
+  width:85%;
+  border: .5rem solid #7A13E2;
 box-shadow: 0 .8rem .7rem #FDFAD9;
   }
   .link:hover{
-  box-shadow: 0 0 .7rem #FEFAE0;
+  box-shadow: 0 0 .7rem #640D5F;
+  z-index:3;
   }
   }
   .content{
