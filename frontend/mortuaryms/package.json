@@ -6,12 +6,17 @@
     "@babel/core": "^7.25.9",
     "@babel/preset-env": "^7.25.9",
     "@babel/preset-react": "^7.25.9",
+    "axios": "^1.7.7",
     "babel-loader": "^9.2.1",
+    "buffer": "^6.0.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.27.0",
     "react-scripts": "^5.0.1",
-    "styled-components": "^6.1.13"
+    "react-toastify": "^10.0.6",
+    "styled-components": "^6.1.13",
+    "uuid": "^10.0.0",
+    "web-vitals": "^4.2.4"
   },
   "scripts": {
     "start": "react-scripts start",
