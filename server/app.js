@@ -4,7 +4,7 @@ require('dotenv').config();
 const cors = require('cors');
 const mongoose = require('mongoose');
 const adminStaffRoutes = require('./routes/adminStaffRoutes'); // Correct import
-
+const deceasedRoutes = require('./routes/deceasedRoutes');
 const port = process.env.PORT || 5000;
 
 // Middleware
@@ -29,7 +29,7 @@ mongoose
 
 // Routes
 app.use('/api/admin', adminStaffRoutes); // Ensure adminStaffRoutes is valid middleware
-
+app.use('/api/addDeceased', deceasedRoutes);
 // Start Server
 app.listen(port, '127.0.0.1', () => {
   console.log(`App running on port ${port}....`);

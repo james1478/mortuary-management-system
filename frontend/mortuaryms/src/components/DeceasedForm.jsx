@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
-
+import { addDeceasedRoute } from "../utils/APIroutes";
 const toastOptions = {
   position: "bottom-left",
   autoClose: 7000,
@@ -22,14 +22,14 @@ const DeceasedForm = () => {
     causeOfDeath: "",
     familyFirstName: "",
     familyLastName: "",
-    phoneNumber: "",
-    nationalId: "",
+    familyPhoneNumber: "", 
+    familyNationalId: "",
     relationship: "",
-    email: "",
+    familyEmail: "",
   });
 
   const handleValidation = () => {
-    const { firstName, lastName, age, gender, phoneNumber, email } = values;
+    const { firstName, lastName, age, gender, familyPhoneNumber, familyEmail } = values;
 
     if (!firstName || !lastName) {
       toast.error("First and Last Name are required.", toastOptions);
@@ -43,10 +43,10 @@ const DeceasedForm = () => {
     } else if (!gender) {
       toast.error("Please select a gender.", toastOptions);
       return false;
-    } else if (!phoneNumber || phoneNumber.length < 10) {
+    } else if (!familyPhoneNumber || familyPhoneNumber.length < 10) {
       toast.error("Invalid phone number.", toastOptions);
       return false;
-    } else if (!email.includes("@") || email.length < 6) {
+    } else if (!familyEmail.includes("@") || familyEmail.length < 6) {
       toast.error("Invalid email format.", toastOptions);
       return false;
     }
@@ -62,7 +62,7 @@ const DeceasedForm = () => {
     event.preventDefault();
     if (handleValidation()) {
       try {
-        const { data } = await axios.post("/api/addDeceased", values);
+        const { data } = await axios.post(addDeceasedRoute, values);
         if (data.status === false) {
           toast.error(data.msg, toastOptions);
         } else {
@@ -76,10 +76,10 @@ const DeceasedForm = () => {
             causeOfDeath: "",
             familyFirstName: "",
             familyLastName: "",
-            phoneNumber: "",
-            nationalId: "",
+            familyPhoneNumber: "",
+            familyNationalId: "",
             relationship: "",
-            email: "",
+            familyEmail: "",
           });
         }
       } catch (error) {
@@ -141,13 +141,13 @@ const DeceasedForm = () => {
         {/* Phone Number */}
         <div className="col-md-6">
           <label htmlFor="inputPhone" className="form-label">Phone Number</label>
-          <input type="text" name="phoneNumber" maxLength={13} value={values.phoneNumber} onChange={handleChange} className="form-control" />
+          <input type="text" name="familyPhoneNumber" maxLength={13} value={values.familyPhoneNumber} onChange={handleChange} className="form-control" />
         </div>
 
         {/* National ID */}
         <div className="col-md-2">
           <label htmlFor="inputNationalid" className="form-label">National ID Number</label>
-          <input type="text" name="nationalId" maxLength={8} value={values.nationalId} onChange={handleChange} className="form-control" />
+          <input type="text" name="familyNationalId" maxLength={8} value={values.familyNationalId} onChange={handleChange} className="form-control" />
         </div>
 
         {/* Relationship with Deceased */}
@@ -168,9 +168,8 @@ const DeceasedForm = () => {
         {/* Email Address */}
         <div className="col-md-6">
           <label htmlFor="inputEmail" className="form-label">Email Address</label>
-          <input type="email" name="email" maxLength={40} value={values.email} onChange={handleChange} className="form-control" />
+          <input type="email" name="familyEmail" maxLength={40} value={values.familyEmail} onChange={handleChange} className="form-control" />
         </div>
-
         {/* Submit Button */}
         <div className="col-12">
           <button type="submit" className="btn btn-primary">Add Deceased</button>

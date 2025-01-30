@@ -1,0 +1,12 @@
+const express = require('express');
+const router = express.Router();
+const deceasedController = require('../controllers/deceasedController');
+
+// Define routes
+router.post('/add', deceasedController.addDeceased);
+router.get('/', deceasedController.getAllDeceased);
+router.get('/:id', deceasedController.getDeceasedById);
+router.put('/:id', deceasedController.updateDeceased);
+router.delete('/:id', deceasedController.deleteDeceased);
+
+module.exports = router;
