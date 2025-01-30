@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
+import { addInventoryRoute } from "../utils/APIroutes";
 
 const toastOptions = {
   position: "bottom-left",
@@ -79,7 +80,7 @@ const InventoryForm = () => {
     event.preventDefault();
     if (handleValidation()) {
       try {
-        const { data } = await axios.post("/api/addinventory", values);
+        const { data } = await axios.post(addInventoryRoute, values);
         if (data.status === false) {
           toast.error(data.msg, toastOptions);
         } else {
@@ -203,7 +204,7 @@ const InventoryForm = () => {
           <input 
             type="text" 
             name="supplierPhone" 
-            maxLength={13} 
+            maxLength={10} 
             className="form-control" 
             value={values.supplierPhone} 
             onChange={handleChange} 

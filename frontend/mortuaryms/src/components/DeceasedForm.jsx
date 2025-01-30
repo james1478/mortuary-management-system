@@ -26,10 +26,11 @@ const DeceasedForm = () => {
     familyNationalId: "",
     relationship: "",
     familyEmail: "",
+    familyAddress: "",
   });
 
   const handleValidation = () => {
-    const { firstName, lastName, age, gender, familyPhoneNumber, familyEmail } = values;
+    const { firstName, lastName, age, gender, familyPhoneNumber, familyEmail ,familyAddress} = values;
 
     if (!firstName || !lastName) {
       toast.error("First and Last Name are required.", toastOptions);
@@ -48,6 +49,9 @@ const DeceasedForm = () => {
       return false;
     } else if (!familyEmail.includes("@") || familyEmail.length < 6) {
       toast.error("Invalid email format.", toastOptions);
+      return false;
+    } else if(!familyAddress || familyAddress.length < 5){
+      toast.error("Please enter the family address.", toastOptions);
       return false;
     }
 
@@ -80,6 +84,7 @@ const DeceasedForm = () => {
             familyNationalId: "",
             relationship: "",
             familyEmail: "",
+            familyAddress: "",
           });
         }
       } catch (error) {
@@ -169,6 +174,18 @@ const DeceasedForm = () => {
         <div className="col-md-6">
           <label htmlFor="inputEmail" className="form-label">Email Address</label>
           <input type="email" name="familyEmail" maxLength={40} value={values.familyEmail} onChange={handleChange} className="form-control" />
+        </div>
+        <div className="col-12">
+          <label htmlFor="inputAddress" className="form-label">Address</label>
+          <input 
+            type="text" 
+            name="familyAddress" 
+            maxLength={80} 
+            className="form-control" 
+            value={values.familyAddress} 
+            onChange={handleChange} 
+            placeholder="1234 Main St" 
+          />
         </div>
         {/* Submit Button */}
         <div className="col-12">

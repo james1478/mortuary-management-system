@@ -65,6 +65,11 @@ const DeceasedSchema = new mongoose.Schema({
     required: true,
     trim: true,
   },
+  familyAddress: {
+    type: String,
+    required: true,
+    trim: true,
+  },
   familyPhoneNumber: {
     type: String,
     required: true,

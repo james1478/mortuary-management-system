@@ -18,6 +18,7 @@ module.exports = {
         familyLastName,
         familyPhoneNumber,
         familyEmail,
+        familyAddress,
       } = req.body;
 
       // Check if the family National ID already exists
@@ -42,6 +43,7 @@ module.exports = {
         familyLastName,
         familyPhoneNumber,
         familyEmail,
+        familyAddress,
       });
 
       return res.status(201).json({
