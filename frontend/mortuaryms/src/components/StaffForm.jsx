@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
-
+import { addStaffRoute } from "../utils/APIroutes";
 const toastOptions = {
   position: "bottom-left",
   autoClose: 7000,
@@ -98,7 +98,7 @@ const StaffForm = () => {
     event.preventDefault();
     if (handleValidation()) {
       try {
-        const { data } = await axios.post("/api/addstaff", values);
+        const { data } = await axios.post(addStaffRoute, values);
         if (data.status === false) {
           toast.error(data.msg, toastOptions);
         } else {
@@ -137,6 +137,7 @@ const StaffForm = () => {
           <input 
             type="text" 
             name="fullName" 
+            maxLength={30} 
             className="form-control" 
             value={values.fullName} 
             onChange={handleChange} 
@@ -148,6 +149,7 @@ const StaffForm = () => {
           <input 
             type="text" 
             name="phone" 
+            maxLength={10} 
             className="form-control" 
             value={values.phone} 
             onChange={handleChange} 
@@ -159,6 +161,7 @@ const StaffForm = () => {
           <input 
             type="email" 
             name="email" 
+            maxLength={40} 
             className="form-control" 
             value={values.email} 
             onChange={handleChange} 
@@ -171,6 +174,7 @@ const StaffForm = () => {
             type="text" 
             name="address" 
             className="form-control" 
+            maxLength={80} 
             value={values.address} 
             onChange={handleChange} 
           />
@@ -181,6 +185,7 @@ const StaffForm = () => {
           <input 
             type="text" 
             name="position" 
+            maxLength={40} 
             className="form-control" 
             value={values.position} 
             onChange={handleChange} 
@@ -216,7 +221,7 @@ const StaffForm = () => {
         <div className="col-md-6">
           <label htmlFor="inputSalary" className="form-label">Salary (Ksh)</label>
           <input 
-            type="number" 
+            type="text" 
             name="salary" 
             className="form-control" 
             value={values.salary} 
@@ -232,6 +237,7 @@ const StaffForm = () => {
           <input 
             type="text" 
             name="emergencyName" 
+            maxLength={30} 
             className="form-control" 
             value={values.emergencyName} 
             onChange={handleChange} 
@@ -243,6 +249,7 @@ const StaffForm = () => {
           <input 
             type="text" 
             name="emergencyPhone" 
+            maxLength={10} 
             className="form-control" 
             value={values.emergencyPhone} 
             onChange={handleChange} 
@@ -253,9 +260,21 @@ const StaffForm = () => {
           <label htmlFor="inputEmergencyEmail" className="form-label">Emergency Email</label>
           <input 
             type="email" 
+            maxLength={40} 
             name="emergencyEmail" 
             className="form-control" 
             value={values.emergencyEmail} 
+            onChange={handleChange} 
+          />
+        </div>
+        <div className="col-md-6">
+          <label htmlFor="inputEmergencyEmail" className="form-label">Address</label>
+          <input 
+            type="text" 
+            maxLength={80} 
+            name="emergencyAddress" 
+            className="form-control" 
+            value={values.emergencyAddress} 
             onChange={handleChange} 
           />
         </div>
