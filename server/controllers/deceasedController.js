@@ -83,7 +83,7 @@ module.exports = {
     }
   },
 
-  // Update a deceased record
+  //update deceased
   updateDeceased: async (req, res, next) => {
     try {
       const { id } = req.params;
@@ -107,8 +107,7 @@ module.exports = {
       next(error);
     }
   },
-
-  // Delete a deceased record
+  // Delete a deceased record by ID
   deleteDeceased: async (req, res, next) => {
     try {
       const { id } = req.params;
