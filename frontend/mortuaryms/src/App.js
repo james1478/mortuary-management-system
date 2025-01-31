@@ -14,8 +14,6 @@ class App extends Component {
           <Route path='/registeradmin' element={<RegisterAdmin />} />
           <Route path='/loginadminstaff' element={<LoginAdminStaff />} />
           <Route path='/homepage' element={<Homepage />} />
-          {/*  <Route path='/deceasedlist' element={<DeceasedList />} />
-          <Route path='/deceased/:id' element={<DeceasedDetails />} />*/}
           <Route path='/deceased/:id' element={<DeceasedDetails />} />
         </Routes>
       </BrowserRouter>
