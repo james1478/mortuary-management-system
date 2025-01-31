@@ -5,6 +5,7 @@ import RegisterAdmin from './pages/RegisterAdmin';
 import LoginAdminStaff from './pages/LoginAdminStaff';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Homepage from './pages/Homepage';
+import DeceasedDetails from './components/DeceasedDetails';
 class App extends Component {
   render() {
     return (
@@ -13,6 +14,9 @@ class App extends Component {
           <Route path='/registeradmin' element={<RegisterAdmin />} />
           <Route path='/loginadminstaff' element={<LoginAdminStaff />} />
           <Route path='/homepage' element={<Homepage />} />
+          {/*  <Route path='/deceasedlist' element={<DeceasedList />} />
+          <Route path='/deceased/:id' element={<DeceasedDetails />} />*/}
+          <Route path='/deceased/:id' element={<DeceasedDetails />} />
         </Routes>
       </BrowserRouter>
     );

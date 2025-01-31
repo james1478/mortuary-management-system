@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import DeceasedForm from '../components/DeceasedForm';
 import StaffForm from '../components/StaffForm';
 import InventoryForm from '../components/InventoryForm';
+import DeceasedList from '../components/DeceasedList';
 export default class Homepage extends Component {
   constructor(props) {
     super(props);
@@ -46,8 +47,13 @@ export default class Homepage extends Component {
          <InventoryForm />
          </>
         );
-      case 'manage-deceased':
-        return <p>Edit or update deceased records here.</p>;
+        case 'manage-deceased':
+          return (
+            <div>
+              <DeceasedList />
+            </div>
+          );
+        
       default:
         return <p>Select a menu item to display content.</p>;
     }
