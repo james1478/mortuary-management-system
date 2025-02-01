@@ -15,7 +15,7 @@ const EditDeceased = () => {
   useEffect(() => {
     const fetchDeceased = async () => {
       try {
-        const response = await axios.get(`http://localhost:3080/api/getDeceased/${id}`);
+        const response = await axios.get(`http://localhost:3090/api/getDeceased/${id}`);
         setFormData(response.data.deceased);
       } catch (error) {
         console.error("Error fetching deceased details:", error);

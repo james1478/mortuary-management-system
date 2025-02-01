@@ -1,14 +1,12 @@
+// server/routes/inventoryRoutes.js
 const express = require('express');
 const router = express.Router();
-const {
-  addInventoryItem,
-  getAllInventoryItems,
-} = require('../controllers/inventoryController');
+const inventoryController = require('../controllers/inventoryController');
 
-// Route to add a new inventory item
-router.post('/addinventory', addInventoryItem);
-
-// Route to get all inventory items
-router.get('/getinventory', getAllInventoryItems);
+router.post('/addinventory', inventoryController.addInventory);
+router.get('/getinventory', inventoryController.getAllInventory);
+router.get('/:id', inventoryController.getInventoryById);
+router.put('/:id', inventoryController.updateInventory);
+router.delete('/:id', inventoryController.deleteInventory);
 
 module.exports = router;
