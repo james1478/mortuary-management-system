@@ -28,6 +28,8 @@ const InventoryDetails = () => {
   if (loading) return <p>Loading details...</p>;
   if (!item) return <p>Inventory item not found.</p>;
 
+    // Calculate total cost
+    const totalCost = item.quantity * item.unitPrice;
   return (
     <div className="container mt-4">
       <h2>Inventory Details</h2>
@@ -72,6 +74,10 @@ const InventoryDetails = () => {
           <tr>
             <th>Supplier Address</th>
             <td>{item.supplier.address}</td>
+          </tr>
+          <tr>
+            <th>Total Cost (Ksh)</th>
+            <td>{totalCost}</td>
           </tr>
         </tbody>
       </table>
