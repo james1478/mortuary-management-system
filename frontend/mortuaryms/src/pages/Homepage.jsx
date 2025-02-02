@@ -6,6 +6,7 @@ import InventoryForm from '../components/InventoryForm';
 import DeceasedList from '../components/DeceasedList';
 import InventoryList from '../components/InventoryList';
 import StaffList from '../components/StaffList';
+import Dashboard from '../components/Dashboard';
 export default class Homepage extends Component {
   constructor(props) {
     super(props);
@@ -25,7 +26,11 @@ export default class Homepage extends Component {
 
       /**DashBoard ########################## */
       case 'dashboard':
-        return <p>Welcome to the Dashboard!</p>;
+        return (
+          <>
+          <Dashboard />
+          </>
+        );
 
         /**Deceased Form ############################### */
       case 'deceased':
@@ -115,7 +120,7 @@ export default class Homepage extends Component {
               </button>
               <h4>24, October</h4>
               <button className="link" onClick={() => alert('Settings Page')}>
-                Settings
+               Account Settings
               </button>
             </div>
 
@@ -172,7 +177,7 @@ const HomepageContainer = styled.div`
       background-color: #fff;
 
       .content-mini-menu {
-        background-color: #c1d8c3;
+        background-color: #333;
         display: flex;
         flex-direction: row;
         align-items: center;
