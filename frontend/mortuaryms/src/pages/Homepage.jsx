@@ -5,6 +5,7 @@ import StaffForm from '../components/StaffForm';
 import InventoryForm from '../components/InventoryForm';
 import DeceasedList from '../components/DeceasedList';
 import InventoryList from '../components/InventoryList';
+import StaffList from '../components/StaffList';
 export default class Homepage extends Component {
   constructor(props) {
     super(props);
@@ -60,6 +61,12 @@ export default class Homepage extends Component {
                 <InventoryList />
               </div>
             );
+            case 'manage-staff':
+              return (
+                <div>
+                  <StaffList />
+                </div>
+              );
       default:
         return <p>Select a menu item to display content.</p>;
     }

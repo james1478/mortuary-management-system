@@ -63,42 +63,66 @@ const EditInventory = () => {
     <div className="container mt-4">
       <h2>Edit Inventory Item</h2>
       <form onSubmit={handleSubmit}>
-        <label>Item Name:</label>
+        
+        <div>
+          <label>Item Name:</label>
         <input type="text" name="itemName" value={formData.itemName} onChange={handleChange} required />
 
-        <label>Category:</label>
+        </div>
+        <div>
+          <label>Category:</label>
         <select name="category" value={formData.category} onChange={handleChange} required>
           <option value="">Select Category</option>
           <option value="Equipment">Equipment</option>
           <option value="Consumables">Consumables</option>
           <option value="Clothing">Clothing</option>
         </select>
-
-        <label>Quantity:</label>
+        </div>
+         <div>
+          <label>Quantity:</label>
         <input type="number" name="quantity" value={formData.quantity} onChange={handleChange} required />
-
-        <label>Unit Price (Ksh):</label>
+       
+        </div>
+         <div>
+          <label>Unit Price (Ksh):</label>
         <input type="number" name="unitPrice" value={formData.unitPrice} onChange={handleChange} required />
-
-        <label>Date of Purchase:</label>
+       
+        </div>
+        
+        <div>
+          <label>Date of Purchase:</label>
         <input type="date" name="dateOfPurchase" value={formData.dateOfPurchase} onChange={handleChange} required />
 
-        <label>Description:</label>
+        </div>
+        <div>
+          <label>Description:</label>
         <textarea name="description" value={formData.description} onChange={handleChange} />
 
-        <label>Supplier Name:</label>
+        </div>
+        <div>
+<label>Supplier Name:</label>
         <input type="text" name="supplierName" value={formData.supplierName} onChange={handleChange} required />
-
-        <label>Supplier Phone:</label>
+       
+        </div>
+        <div>
+         <label>Supplier Phone:</label>
         <input type="text" name="supplierPhone" value={formData.supplierPhone} onChange={handleChange} required />
-
+         
+        </div>
+         <div>
         <label>Supplier Email:</label>
         <input type="email" name="supplierEmail" value={formData.supplierEmail} onChange={handleChange} required />
-
-        <label>Supplier Address:</label>
+      
+       </div>
+        <div>
+          <label>Supplier Address:</label>
         <input type="text" name="supplierAddress" value={formData.supplierAddress} onChange={handleChange} required />
 
-        <button type="submit">Update Inventory Item</button>
+        </div>
+        <div>
+          <button type="submit">Update Inventory Item</button> 
+        </div>
+       
       </form>
     </div>
   );

@@ -33,7 +33,7 @@ mongoose
 app.use('/api/admin', adminStaffRoutes);
 app.use('/api/addDeceased', deceasedRoutes);
 app.use('/api/getDeceased', deceasedRoutes);
-app.use('/api/addStaff', staffRoutes);
+app.use('/api/staff', staffRoutes);
 app.use('/api/inventory', inventoryRoutes);
 
 // Start Server

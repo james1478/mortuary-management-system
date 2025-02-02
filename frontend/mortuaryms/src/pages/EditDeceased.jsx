@@ -34,7 +34,7 @@ const EditDeceased = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:3080/api/getDeceased/${id}`, formData);
+      await axios.put(`http://localhost:3090/api/getDeceased/${id}`, formData);
       alert("Record updated successfully!");
       navigate("/deceasedlist");
     } catch (error) {
@@ -46,19 +46,33 @@ const EditDeceased = () => {
     <div>
       <h2>Edit Deceased Record</h2>
       <form onSubmit={handleSubmit}>
-        <label>First Name:</label>
+        <div>
+           <label>First Name:</label>
         <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} required />
 
+        </div>
+       <div>
         <label>Last Name:</label>
         <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} required />
 
-        <label>Age:</label>
+       </div>
+        
+        <div>
+           <label>Age:</label>
         <input type="number" name="age" value={formData.age} onChange={handleChange} required />
 
+        </div>
+       
+       <div>
         <label>Cause of Death:</label>
         <input type="text" name="causeOfDeath" value={formData.causeOfDeath} onChange={handleChange} required />
 
-        <button type="submit">Update</button>
+       </div>
+        
+        <div>
+          <button type="submit">Update</button>
+        </div>
+        
       </form>
     </div>
   );

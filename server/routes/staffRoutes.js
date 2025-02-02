@@ -1,9 +1,13 @@
-// routes/staffRoutes.js
+// server/routes/staffRoutes.js
 const express = require('express');
-const { addStaff, getAllStaff } = require('../controllers/staffController');
 const router = express.Router();
+const staffController = require('../controllers/staffController');
 
-router.post('/addstaff', addStaff);
-router.get('/allstaff', getAllStaff);
+// Define staff routes
+router.post('/addstaff', staffController.addStaff);
+router.get('/getstaff', staffController.getAllStaff);
+router.get('/:id', staffController.getStaffById);
+router.put('/:id', staffController.updateStaff);
+router.delete('/:id', staffController.deleteStaff);
 
 module.exports = router;

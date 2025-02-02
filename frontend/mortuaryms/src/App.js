@@ -10,6 +10,9 @@ import EditDeceased from './pages/EditDeceased';
 import InventoryList from './components/InventoryList';
 import InventoryDetails from './components/InventoryDetails';
 import EditInventory from './pages/EditInventory';
+import StaffList from './components/StaffList';
+import StaffDetails from './components/StaffDetails';
+import EditStaff from './pages/EditStaff';
 class App extends Component {
   render() {
     return (
@@ -23,6 +26,9 @@ class App extends Component {
           <Route path='/inventorylist' element={<InventoryList />} />
           <Route path='/inventory/:id' element={<InventoryDetails />} />
           <Route path='/edit-inventory/:id' element={<EditInventory />} />
+          <Route path='/stafflist' element={<StaffList />} />
+          <Route path='/staff/:id' element={<StaffDetails />} />
+          <Route path='/edit-staff/:id' element={<EditStaff />} />
         </Routes>
       </BrowserRouter>
     );
