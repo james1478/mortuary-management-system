@@ -1,4 +1,3 @@
-// models/Staff.js
 const mongoose = require('mongoose');
 
 const staffSchema = new mongoose.Schema(
@@ -12,6 +11,13 @@ const staffSchema = new mongoose.Schema(
       type: String,
       required: true,
       minlength: 10,
+    },
+    NationalId: {
+      type: String,
+      required: true,
+      unique: true,
+      minlength: 8,
+      maxlength: 8,
     },
     email: {
       type: String,
@@ -63,6 +69,10 @@ const staffSchema = new mongoose.Schema(
     emergencyRelationship: {
       type: String,
       required: true,
+    },
+    available: {
+      type: Boolean,
+      default: true, // New staff members are available by default
     },
   },
   { timestamps: true }

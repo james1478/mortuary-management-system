@@ -7,6 +7,7 @@ import DeceasedList from '../components/DeceasedList';
 import InventoryList from '../components/InventoryList';
 import StaffList from '../components/StaffList';
 import Dashboard from '../components/Dashboard';
+import BookingForm from '../components/BookingForm';
 export default class Homepage extends Component {
   constructor(props) {
     super(props);
@@ -72,6 +73,16 @@ export default class Homepage extends Component {
                   <StaffList />
                 </div>
               );
+              case 'booking':
+            return(
+              <>
+              <BookingForm />
+              </>
+            ); 
+             case 'manage-bookings':
+               return (
+                   <BookingList /> 
+                   );
       default:
         return <p>Select a menu item to display content.</p>;
     }
@@ -98,6 +109,9 @@ export default class Homepage extends Component {
             <button className="link" onClick={() => this.setActivePage('inventory')}>
               Inventory <span className="link-span">+</span>
             </button>
+            <button className="link" onClick={() => this.setActivePage('booking')}>
+  Booking <span className="link-span">+</span>
+</button>
             <button className="link" onClick={() => this.setActivePage('manage-deceased')}>
               Manage Deceased
             </button>

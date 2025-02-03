@@ -42,6 +42,10 @@ const StaffDetails = () => {
             <td>{staff.phone}</td>
           </tr>
           <tr>
+            <th>National ID Number</th>
+            <td>{staff.NationalId}</td>
+          </tr>
+          <tr>
             <th>Email</th>
             <td>{staff.email}</td>
           </tr>

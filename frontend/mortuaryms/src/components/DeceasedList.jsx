@@ -24,7 +24,7 @@ const DeceasedList = () => {
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this record?")) {
       try {
-        await axios.delete(`http://localhost:3080/api/getDeceased/${id}`);
+        await axios.delete(`http://localhost:3090/api/getDeceased/${id}`);
         setDeceasedList(deceasedList.filter(deceased => deceased._id !== id));
       } catch (error) {
         console.error("Error deleting deceased record:", error);
@@ -41,16 +41,18 @@ const DeceasedList = () => {
             <th>#</th>
             <th>First Name</th>
             <th>Last Name</th>
+            <th>Nation ID Number</th>
             <th>Age</th>
             <th>Actions</th>
           </tr>
         </thead>
         <tbody>
-          {deceasedList.map((deceased, index) => (
+          {deceasedList.length > 0 ? ( deceasedList.map((deceased, index) => (
             <tr key={deceased._id}>
               <td>{index + 1}</td>
               <td>{deceased.firstName}</td>
               <td>{deceased.lastName}</td>
+              <td>{deceased.deceasedNationalId}</td>
               <td>{deceased.age}</td>
               <td>
                 <Link to={`/deceased/${deceased._id}`} className="btn btn-info">
@@ -70,7 +72,12 @@ const DeceasedList = () => {
                 </button>
               </td>
             </tr>
-          ))}
+         )
+         )):(
+          <tr>
+            <td colSpan="6" className="text-center">No deceased records found.</td>
+          </tr>
+         )}
         </tbody>
       </table>
     </div>

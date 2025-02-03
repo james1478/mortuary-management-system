@@ -12,3 +12,7 @@ export const getInventoryDetailsRoute = 'http://localhost:3090/api/inventory'; /
 export const addStaffRoute = 'http://localhost:3090/api/staff/addstaff';
 export const getStaffListRoute = 'http://localhost:3090/api/staff/getstaff';
 export const getStaffDetailsRoute = 'http://localhost:3090/api/staff'; // Append /:id for details
+export const addBookingRoute = 'http://localhost:3090/api/booking/add';
+export const getBookingsListRoute =
+  'http://localhost:3090/api/booking/getbookings';
+export const getBookingsDetailsRoute = 'http://localhost:3090/api/booking'; // Append /:id for details

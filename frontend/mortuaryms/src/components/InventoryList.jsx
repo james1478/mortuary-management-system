@@ -23,7 +23,7 @@ const InventoryList = () => {
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this inventory item?")) {
       try {
-        await axios.delete(`http://localhost:5000/api/inventory/${id}`);
+        await axios.delete(`http://localhost:3090/api/inventory/${id}`);
         setInventory(inventory.filter((item) => item._id !== id));
       } catch (error) {
         console.error("Error deleting inventory item:", error);

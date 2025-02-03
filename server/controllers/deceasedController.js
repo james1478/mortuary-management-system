@@ -11,6 +11,7 @@ module.exports = {
         age,
         dateOfDeath,
         gender,
+        deceasedNationalId,
         causeOfDeath,
         familyNationalId,
         relationship,
@@ -22,10 +23,10 @@ module.exports = {
       } = req.body;
 
       // Check if the family National ID already exists
-      const idCheck = await Deceased.findOne({ familyNationalId });
+      const idCheck = await Deceased.findOne({ deceasedNationalId });
       if (idCheck)
         return res.status(400).json({
-          msg: 'A deceased record with this family National ID already exists.',
+          msg: 'A deceased record with thisNational ID already exists.',
           status: false,
         });
 
@@ -38,6 +39,7 @@ module.exports = {
         gender,
         causeOfDeath,
         familyNationalId,
+        deceasedNationalId,
         relationship,
         familyFirstName,
         familyLastName,

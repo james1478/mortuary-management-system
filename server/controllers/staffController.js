@@ -8,6 +8,7 @@ module.exports = {
       const {
         fullName,
         phone,
+        NationalId,
         email,
         address,
         position,
@@ -24,6 +25,7 @@ module.exports = {
       const newStaff = new Staff({
         fullName,
         phone,
+        NationalId,
         email,
         address,
         position,

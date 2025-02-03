@@ -24,6 +24,7 @@ const DeceasedForm = () => {
     familyLastName: "",
     familyPhoneNumber: "", 
     familyNationalId: "",
+    deceasedNationalId: "",
     relationship: "",
     familyEmail: "",
     familyAddress: "",
@@ -82,6 +83,7 @@ const DeceasedForm = () => {
             familyLastName: "",
             familyPhoneNumber: "",
             familyNationalId: "",
+            deceasedNationalId: "",
             relationship: "",
             familyEmail: "",
             familyAddress: "",
@@ -125,6 +127,12 @@ const DeceasedForm = () => {
             <option value="Male">Male</option>
             <option value="Female">Female</option>
           </select>
+        </div>
+        
+         {/* Deceased National ID */}
+         <div className="col-md-2">
+          <label htmlFor="inputNationalid" className="form-label">Deceased National ID Number</label>
+          <input type="text" name="deceasedNationalId" maxLength={8} value={values.deceasedNationalId} onChange={handleChange} className="form-control" />
         </div>
 
         {/* Cause of Death */}

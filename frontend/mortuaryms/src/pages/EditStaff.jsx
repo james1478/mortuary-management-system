@@ -30,6 +30,7 @@ const EditStaff = () => {
         setFormData({
           fullName: staff.fullName || "",
           phone: staff.phone || "",
+          NationalId: staff.NationalId || "",
           email: staff.email || "",
           address: staff.address || "",
           position: staff.position || "",
@@ -90,6 +91,17 @@ const EditStaff = () => {
             type="text"
             name="phone"
             value={formData.phone}
+            onChange={handleChange}
+            required
+            className="form-control"
+          />
+        </div>
+        <div className="form-group">
+          <label>National ID:</label>
+          <input
+            type="text"
+            name="NationalId"
+            value={formData.NationalId}
             onChange={handleChange}
             required
             className="form-control"

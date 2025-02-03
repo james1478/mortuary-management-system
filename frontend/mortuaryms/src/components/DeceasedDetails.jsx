@@ -46,6 +46,10 @@ const DeceasedDetails = () => {
             <td>{deceased.age}</td>
           </tr>
           <tr>
+            <th>National ID Number</th>
+            <td>{deceased.deceasedNationalId}</td>
+          </tr>
+          <tr>
             <th>Date of Death</th>
             <td>{new Date(deceased.dateOfDeath).toLocaleDateString()}</td>
           </tr>

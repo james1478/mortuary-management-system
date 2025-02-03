@@ -62,7 +62,11 @@ const EditDeceased = () => {
         <input type="number" name="age" value={formData.age} onChange={handleChange} required />
 
         </div>
-       
+        <div>
+           <label>National ID Number:</label>
+        <input type="number" name="age" value={formData.deceasedNationalId} onChange={handleChange} required />
+
+        </div>
        <div>
         <label>Cause of Death:</label>
         <input type="text" name="causeOfDeath" value={formData.causeOfDeath} onChange={handleChange} required />

@@ -29,6 +29,13 @@ const DeceasedSchema = new mongoose.Schema({
     required: true,
     enum: ['Male', 'Female'],
   },
+  deceasedNationalId: {
+    type: String,
+    required: true,
+    unique: true,
+    minlength: 8,
+    maxlength: 8,
+  },
   causeOfDeath: {
     type: String,
     required: true,
