@@ -1,3 +1,4 @@
+// server/controllers/bookingController.js
 const Booking = require('../models/bookingModel');
 const Deceased = require('../models/deceasedModel');
 const Staff = require('../models/staffModel');
@@ -10,11 +11,8 @@ module.exports = {
       const { date, serviceType, deceasedNationalId, notes } = req.body;
 
       // Validate that the deceased exists using the provided National ID number.
-      const deceased = await Deceased.findOne({
-        deceasedNationalId: deceasedNationalId,
-      });
+      const deceased = await Deceased.findOne({ deceasedNationalId });
       console.log('Deceased found:', deceased);
-
       if (!deceased) {
         return res.status(404).json({
           status: false,
@@ -79,11 +77,11 @@ module.exports = {
         });
       }
 
-      // Create the booking with the correct field name "staffAssigned"
+      // Create the booking using the correct field name "staffAssigned"
       const newBooking = new Booking({
         date,
         serviceType,
-        deceased: deceased._id, // Associate with deceased record
+        deceased: deceased._id,
         staffAssigned,
         notes,
       });
@@ -167,20 +165,31 @@ module.exports = {
     }
   },
 
-  // Delete a booking
+  // Delete a booking and set assigned staff as available
   deleteBooking: async (req, res, next) => {
     try {
       const { id } = req.params;
-      const deletedBooking = await Booking.findByIdAndDelete(id);
 
-      if (!deletedBooking)
+      // Retrieve the booking to get assigned staff IDs
+      const booking = await Booking.findById(id);
+      if (!booking) {
         return res
           .status(404)
           .json({ status: false, msg: 'Booking not found.' });
+      }
+
+      // Delete the booking
+      await Booking.findByIdAndDelete(id);
+
+      // Update the availability of the assigned staff back to true
+      await Staff.updateMany(
+        { _id: { $in: booking.staffAssigned } },
+        { available: true }
+      );
 
       return res.json({
         status: true,
-        msg: 'Booking deleted successfully.',
+        msg: 'Booking deleted successfully, and staff availability updated.',
       });
     } catch (error) {
       console.error('Error deleting booking:', error);
