@@ -105,7 +105,17 @@ class LoginAdminStaff extends Component {
               value={password}
               onChange={this.handleChange}
             />
-            <button type="submit">Login</button>
+            <div>
+                <button type="submit">Login</button>
+            </div>
+          <div>
+            <div>
+              <p>OR</p>
+            </div>
+          <div>
+        <a href="/registeradmin">Create Admin Account</a>
+      </div>
+          </div>
           </form>
         </FormContainer>
       </>
@@ -123,16 +133,19 @@ const FormContainer = styled.div`
   width: 100vw;
   background-color: #100F0F;
 
-  h3, h2, h4 {
+  h3, h2, h4, p {
     color: white;
   }
+    p{
+    text-align:center;
+    }
 
   .giphy-embed {
     width: 5rem;
     height: 10rem;
     position: absolute;
-    top: -2rem;
-    left: 40rem;
+    top: -1.5rem;
+    left: 26rem;
     border: none;
   }
 
@@ -165,6 +178,7 @@ const FormContainer = styled.div`
       border-radius: 1rem;
       font-size: 1rem;
       cursor: pointer;
+      width:100%;
       text-transform: uppercase;
       transition: 0.3s ease-in-out;
       &:hover {

@@ -17,3 +17,9 @@ export const addBookingRoute = 'http://localhost:3090/api/booking/add';
 export const getBookingsListRoute =
   'http://localhost:3090/api/booking/getbookings';
 export const getBookingsDetailsRoute = 'http://localhost:3090/api/booking'; // Append /:id for details
+
+// For account settings endpoints:
+export const updateAdminRoute =
+  'http://localhost:3090/api/accountsettings/update';
+export const deleteAdminRoute =
+  'http://localhost:3090/api/accountsettings/delete';

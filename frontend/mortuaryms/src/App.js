@@ -15,14 +15,16 @@ import StaffDetails from './components/StaffDetails';
 import EditStaff from './pages/EditStaff';
 import BookingList from './components/BookingList';
 import BookingDetails from './components/BookingDetails';
+import AccountSettings from './pages/AccountSettings';
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
         <Routes>
           <Route path='/registeradmin' element={<RegisterAdmin />} />
-          <Route path='/loginadmin' element={<LoginAdmin />} />
+          <Route path='/' element={<LoginAdmin />} />
           <Route path='/homepage' element={<Homepage />} />
+          <Route path='/accountsettings' element={<AccountSettings />} />
           <Route path='/deceased/:id' element={<DeceasedDetails />} />
           <Route path='/edit-deceased/:id' element={<EditDeceased />} />
           <Route path='/inventorylist' element={<InventoryList />} />

@@ -154,7 +154,7 @@ const DeceasedForm = () => {
         {/* Phone Number */}
         <div className="col-md-6">
           <label htmlFor="inputPhone" className="form-label">Phone Number</label>
-          <input type="text" name="familyPhoneNumber" maxLength={13} value={values.familyPhoneNumber} onChange={handleChange} className="form-control" />
+          <input type="text" name="familyPhoneNumber" maxLength={10} value={values.familyPhoneNumber} onChange={handleChange} className="form-control" />
         </div>
 
         {/* National ID */}

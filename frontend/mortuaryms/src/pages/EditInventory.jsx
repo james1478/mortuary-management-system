@@ -51,9 +51,9 @@ const EditInventory = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:5000/api/inventory/${id}`, formData);
+      await axios.put(`http://localhost:3090/api/inventory/${id}`, formData);
       alert("Inventory item updated successfully!");
-      navigate("/inventorylist"); // Adjust route as needed
+      navigate("/homepage"); // Adjust route as needed
     } catch (error) {
       console.error("Error updating inventory item:", error);
     }

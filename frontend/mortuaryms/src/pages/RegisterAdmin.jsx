@@ -76,7 +76,7 @@ const RegisterAdmin = () => {
           toast.error(data.msg, toastOptions);
         } else if (data.status === true) {
           localStorage.setItem(process.env.LOCALHOST_KEY, JSON.stringify(data.user));
-          navigate('/loginadmin');
+          navigate('/');
         }
         console.log(data);
         

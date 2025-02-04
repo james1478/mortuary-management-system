@@ -44,7 +44,7 @@ class Homepage extends Component {
   handleLogout = () => {
     // Clear admin info from localStorage and navigate to the login page
     localStorage.removeItem('admin');
-    this.props.navigate('/loginadmin');
+    this.props.navigate('/');
   };
 
   handleAccountSettings = () => {

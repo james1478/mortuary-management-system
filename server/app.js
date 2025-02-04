@@ -8,6 +8,7 @@ const deceasedRoutes = require('./routes/deceasedRoutes');
 const staffRoutes = require('./routes/staffRoutes');
 const inventoryRoutes = require('./routes/inventoryRoutes');
 const bookingRoutes = require('./routes/bookingRoutes');
+const accountSettingsRoutes = require('./routes/accountSettingsRoutes');
 const port = process.env.PORT || 5000;
 
 // Middleware
@@ -37,6 +38,7 @@ app.use('/api/getDeceased', deceasedRoutes);
 app.use('/api/staff', staffRoutes);
 app.use('/api/inventory', inventoryRoutes);
 app.use('/api/booking', bookingRoutes);
+app.use('/api/accountsettings', accountSettingsRoutes);
 
 // Start Server
 app.listen(port, '127.0.0.1', () => {

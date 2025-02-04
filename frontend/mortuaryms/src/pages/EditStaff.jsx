@@ -62,7 +62,7 @@ const EditStaff = () => {
     try {
       await axios.put(`http://localhost:3090/api/staff/${id}`, formData);
       alert("Staff member updated successfully!");
-      navigate("/stafflist"); // Adjust route as needed
+      navigate("/homepage"); // Adjust route as needed
     } catch (error) {
       console.error("Error updating staff member:", error);
       alert("Failed to update staff member.");
@@ -78,6 +78,7 @@ const EditStaff = () => {
           <input
             type="text"
             name="fullName"
+            maxLength={30}
             value={formData.fullName}
             onChange={handleChange}
             required
@@ -89,6 +90,7 @@ const EditStaff = () => {
           <label>Phone:</label>
           <input
             type="text"
+            maxLength={10}
             name="phone"
             value={formData.phone}
             onChange={handleChange}
@@ -100,6 +102,7 @@ const EditStaff = () => {
           <label>National ID:</label>
           <input
             type="text"
+            maxLength={8}
             name="NationalId"
             value={formData.NationalId}
             onChange={handleChange}
@@ -112,6 +115,7 @@ const EditStaff = () => {
           <label>Email:</label>
           <input
             type="email"
+            maxLength={40}
             name="email"
             value={formData.email}
             onChange={handleChange}
@@ -154,9 +158,17 @@ const EditStaff = () => {
             className="form-control"
           >
             <option value="">Select Department</option>
-            <option value="Administration">Administration</option>
-            <option value="Operations">Operations</option>
-            <option value="Maintenance">Maintenance</option>
+            <option value="BodyPreparation">Body Preparation</option>
+            <option value="CremationServices">Cremation Services</option>
+            <option value="Funeral Planning">Funeral Planning and Coordination</option>
+            <option value="SecurityServices">Security Services</option>
+            <option value="TransportationServices">Transportation Services</option>
+            <option value="Administrative Services">Administrative Services</option>
+            <option value="Medical&Pathology">Medical & Pathology</option>
+            <option value="Cleaning&Maintenance">Cleaning & Maintenance</option>
+            <option value="IT&DigitalServices">IT & Digital Services</option>
+            <option value="Finance&Accounts">Finance & Accounts</option>
+            <option value="Legal&Compliance">Legal & Compliance</option>
           </select>
         </div>
 
@@ -190,6 +202,7 @@ const EditStaff = () => {
           <label>Emergency Contact Name:</label>
           <input
             type="text"
+            maxLength={30}
             name="emergencyName"
             value={formData.emergencyName}
             onChange={handleChange}
@@ -202,6 +215,7 @@ const EditStaff = () => {
           <label>Emergency Phone:</label>
           <input
             type="text"
+            maxLength={10}
             name="emergencyPhone"
             value={formData.emergencyPhone}
             onChange={handleChange}
@@ -214,6 +228,7 @@ const EditStaff = () => {
           <label>Emergency Email:</label>
           <input
             type="email"
+            maxLength={40}
             name="emergencyEmail"
             value={formData.emergencyEmail}
             onChange={handleChange}
@@ -226,6 +241,7 @@ const EditStaff = () => {
           <label>Emergency Address:</label>
           <input
             type="text"
+            maxLength={80}
             name="emergencyAddress"
             value={formData.emergencyAddress}
             onChange={handleChange}

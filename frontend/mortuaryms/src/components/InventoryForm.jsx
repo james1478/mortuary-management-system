@@ -133,6 +133,8 @@ const InventoryForm = () => {
             onChange={handleChange}
           >
             <option value="">Choose Item Category</option>
+            <option value="Chemicals">Chemicals</option>
+            <option value="Protective Gear">Protective Gear</option>
             <option value="Equipment">Equipment</option>
             <option value="Consumables">Consumables</option>
             <option value="Clothing">Clothing</option>
