@@ -13,6 +13,8 @@ import EditInventory from './pages/EditInventory';
 import StaffList from './components/StaffList';
 import StaffDetails from './components/StaffDetails';
 import EditStaff from './pages/EditStaff';
+import BookingList from './components/BookingList';
+import BookingDetails from './components/BookingDetails';
 class App extends Component {
   render() {
     return (
@@ -29,6 +31,8 @@ class App extends Component {
           <Route path='/stafflist' element={<StaffList />} />
           <Route path='/staff/:id' element={<StaffDetails />} />
           <Route path='/edit-staff/:id' element={<EditStaff />} />
+          <Route path='/bookinglist' element={<BookingList />} />
+          <Route path='/booking/:id' element={<BookingDetails />} />
         </Routes>
       </BrowserRouter>
     );

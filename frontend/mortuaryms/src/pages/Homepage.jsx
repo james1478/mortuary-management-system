@@ -8,6 +8,7 @@ import InventoryList from '../components/InventoryList';
 import StaffList from '../components/StaffList';
 import Dashboard from '../components/Dashboard';
 import BookingForm from '../components/BookingForm';
+import BookingList from '../components/BookingList';
 export default class Homepage extends Component {
   constructor(props) {
     super(props);
