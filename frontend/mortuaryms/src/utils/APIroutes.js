@@ -1,5 +1,6 @@
 export const registerAdminRoute =
   'http://localhost:3090/api/admin/registeradmin';
+export const loginAdminRoute = 'http://localhost:3090/api/admin/loginadmin';
 export const addDeceasedRoute = 'http://localhost:3090/api/addDeceased/add';
 export const getDeceasedListRoute =
   'http://localhost:3090/api/getDeceased/getDeceased';

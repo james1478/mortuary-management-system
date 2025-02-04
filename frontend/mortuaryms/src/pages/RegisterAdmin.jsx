@@ -76,7 +76,7 @@ const RegisterAdmin = () => {
           toast.error(data.msg, toastOptions);
         } else if (data.status === true) {
           localStorage.setItem(process.env.LOCALHOST_KEY, JSON.stringify(data.user));
-          navigate('/');
+          navigate('/loginadmin');
         }
         console.log(data);
         
@@ -152,8 +152,8 @@ const FormContainer = styled.div`
     width: 5rem;
     height: 10rem;
     position: absolute;
-    top: 0.5rem;
-    left: 26rem;
+    top: -1rem;
+    left: 23rem;
     border-style: none;
   }
   form {

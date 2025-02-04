@@ -3,7 +3,7 @@ const app = express();
 require('dotenv').config();
 const cors = require('cors');
 const mongoose = require('mongoose');
-const adminStaffRoutes = require('./routes/adminStaffRoutes'); // Correct import
+const adminRoutes = require('./routes/adminRoutes'); // Correct import
 const deceasedRoutes = require('./routes/deceasedRoutes');
 const staffRoutes = require('./routes/staffRoutes');
 const inventoryRoutes = require('./routes/inventoryRoutes');
@@ -31,7 +31,7 @@ mongoose
   });
 
 // Routes
-app.use('/api/admin', adminStaffRoutes);
+app.use('/api/admin', adminRoutes);
 app.use('/api/addDeceased', deceasedRoutes);
 app.use('/api/getDeceased', deceasedRoutes);
 app.use('/api/staff', staffRoutes);

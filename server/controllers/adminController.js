@@ -42,6 +42,7 @@ module.exports = {
         return res.json({
           msg: 'Incorrect username or password.',
           status: false,
+          foundUser,
         });
       const isPasswordValid = await bcrypt.compare(
         password,
